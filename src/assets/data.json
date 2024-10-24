@@ -1,0 +1,19 @@
+{
+  "assets":[
+    {
+      "type":"stock",
+      "amount":"50000"
+    },
+    {
+      "type":"crypto",
+      "amount":"150000"
+    },
+    {
+      "type":"insurance",
+      "amount":"80000"
+    },{
+      "type":"business",
+      "amount":"20000"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+<div class="container">
+    <form [formGroup]="investForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <h3>Add Your details</h3>
+            <div class="col-4">
+                <select id="inputState" formControlName="assetType" class="form-control">
+                  <option selected>Choose Asset Type...</option>
+                  <option>Stock</option>
+                  <option>Insurance</option>
+                  <option>Real Estate</option>
+                  <option>Crypto</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <input type="text" formControlName="purchasePrice" class="form-control" placeholder="purchase price">
+                <div *ngIf="investForm.get('purchasePrice')?.invalid && investForm.get('purchasePrice')?.touched" class="error">
+                    Purchase price is required and must be a positive number.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <input type="date" formControlName="purchaseDate" class="form-control" placeholder="purchase date">
+                <div *ngIf="investForm.get('purchaseDate')?.invalid && investForm.get('purchaseDate')?.touched" class="error">
+                    Purchase date is required.
+                </div>
+            </div>
+            <div class="col-4">
+                <input type="text" formControlName="quantity" class="form-control" placeholder="quantity">
+                <div *ngIf="investForm.get('quantity')?.invalid && investForm.get('quantity')?.touched" class="error">
+                    Quantity is required and must be a positive number.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </div>
+        </div>
+    </form> 
+</div> 
